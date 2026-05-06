@@ -79,52 +79,95 @@ components:
     shadow: "{elevation.soft}"
 ---
 
-## Overview
-AAHQ Foundation is clean, editorial, and deliberate. The visual language should feel authored rather than generic: warm paper backgrounds, dark ink text, restrained use of terracotta accent, and generous spacing. Avoid the default AI tendency toward glossy gradients, dense dashboards, or interchangeable SaaS layouts.
+## Context and Goals
+Design intent: deliver a clean, editorial interface system that maximizes clarity and usability through whitespace, legible typography, and restrained color usage.
+
+- Must prioritize clarity and accessibility over novelty.
+- Must keep guidance implementation-ready for engineers and designers.
+- Should feel authored and warm, not generic or template-like.
+- Should maintain consistency across product UI, docs, and marketing surfaces.
 
 ## Implementation Stack
 - Base implementation stack: `Astro 5/6` + `Tailwind CSS 4`.
 - Component and theme system: `daisyUI` (core components + theme configuration).
 - Default implementation target should use this stack unless a product-local override defines another frontend setup.
 
-## Brand & Style
-- Use contrast and typography as the primary source of hierarchy.
-- Prefer calm, tactile surfaces over high-saturation UI chrome.
-- Accent color is a signal, not a wash. Use it for emphasis, active states, and key highlights only.
+## Design Tokens and Foundations
 
-## Colors
-- Backgrounds should stay warm and bright: `background` for page canvas, `surface` for bands and low-emphasis panels.
-- Use `ink` for high-importance actions and dark anchors.
-- Use `muted` only for support text, metadata, and dividers paired with whitespace.
-- Validate contrast before using `accent` on light backgrounds for body-size text.
+### Visual Direction
+- Minimal, clean, and high-clarity UI with generous whitespace.
+- Hierarchy should come from typography, spacing, and contrast before decorative effects.
+- Accent should behave as a signal for important actions and states, not as broad decoration.
 
-## Typography
-- Headlines use Fraunces for character and memorability.
-- Interface and body text use Instrument Sans for clarity.
-- Do not mix in default system stacks when implementing new screens unless the existing product already does.
-- Keep headline copy tight. Long paragraphs should rely on body styles, not oversized text.
+### Color Foundation
+- Must use semantic tokens over raw color literals in component implementations.
+- Must keep page canvas on `background` and low-emphasis sections on `surface`.
+- Must use `ink` for primary emphasis and `text` for core copy.
+- Should reserve `muted` for support text and metadata.
+- Must validate contrast for text and controls against WCAG 2.2 AA.
 
-## Layout & Spacing
-- Favor vertical rhythm and obvious section breaks.
-- Standard content width should feel readable first, not maximal.
-- Use whitespace to separate ideas before adding borders or tinted containers.
-- On mobile, preserve hierarchy by reducing columns before reducing spacing too aggressively.
+### Typography Foundation
+- Must use Fraunces for headings and Instrument Sans for interface/body text.
+- Must preserve readable rhythm: body text at `16px` with `1.55` line-height by default.
+- Should keep headlines concise and avoid oversized paragraph-like headings.
+- Must avoid fallback to generic system stacks on new screens unless legacy constraints require it.
 
-## Elevation & Depth
-- Depth should be subtle and mostly reserved for cards, floating panels, and callouts.
-- Avoid stacked shadow systems and glassmorphism.
-- Borders plus spacing are preferred over heavy shadow for most UI.
+### Spacing and Layout Foundation
+- Must follow an 8px rhythm using the defined spacing tokens.
+- Must separate sections with spacing before introducing borders or color blocks.
+- Should keep content width readability-first rather than edge-to-edge.
+- Must reduce columns before collapsing spacing on mobile.
 
-## Shapes
-- Corners are rounded but not playful.
-- Default containers use `rounded.md`; larger feature cards can use `rounded.lg`.
-- Avoid pill-heavy interfaces unless a component specifically needs that treatment.
+### Shape and Elevation Foundation
+- Must use `rounded.md` for standard containers and `rounded.lg` for feature cards.
+- Must keep depth subtle; prefer border + spacing over heavy shadows.
+- Should avoid stacked shadow recipes and glassmorphism.
 
-## Components
-- Primary buttons are dark and confident; keep them visually simple.
-- Secondary buttons should read as calm alternatives, not disabled controls.
-- Cards should feel structured and breathable, with enough padding for mixed content.
-- Forms should prioritize legibility and stable alignment over decorative styling.
+## Component-Level Rules
+
+### Global Component Expectations
+- Every interactive component must define these states when relevant: default, hover, focus-visible, active, disabled, loading, error.
+- Every component with user input must define empty, loading, and error handling.
+- Every state rule must be token-anchored (color token, spacing token, or typography token), not adjective-only.
+- Keyboard, pointer, and touch behavior must be explicitly defined.
+
+### Buttons (`button-primary`, `button-secondary`)
+- Anatomy: container, label, optional leading/trailing icon.
+- Primary button:
+  - Must use `colors.ink` background and white text.
+  - Must preserve minimum touch target of 44px height.
+  - Hover should increase contrast subtly (no glow).
+  - Focus-visible must show a high-contrast ring independent of hover style.
+- Secondary button:
+  - Must use transparent surface with visible border token.
+  - Must not visually resemble disabled state in default appearance.
+- Disabled:
+  - Must reduce emphasis while preserving readable label contrast.
+  - Must remove pointer affordance but remain semantically disabled.
+- Loading:
+  - Must keep width stable and expose progress affordance.
+  - Must prevent duplicate submissions.
+
+### Cards (`card`)
+- Anatomy: container, heading region, content region, optional action row.
+- Must use white card surface, token border, and soft elevation.
+- Must maintain consistent internal padding using spacing tokens.
+- Should support long content without clipping controls or metadata.
+- Responsive:
+  - Must preserve readable padding on mobile.
+  - Must avoid dense multi-column card grids below mobile breakpoint.
+
+### Form Controls (input, textarea, select)
+- Anatomy: label, control, helper text, validation message.
+- Must always render a visible label (not placeholder-only labeling).
+- Must keep vertical alignment stable across empty, filled, error, and disabled states.
+- Focus-visible must be clearly distinct from hover and default.
+- Error:
+  - Must include text guidance, not color-only indication.
+  - Must map to `danger` token for border/support message with compliant contrast.
+- Long labels and overflow:
+  - Should wrap labels instead of clipping.
+  - Must prevent helper/error overlap with adjacent fields.
 
 ## daisyUI Mapping
 - When implementing this design system with daisyUI, prefer a custom daisyUI theme instead of mixing raw Tailwind palette classes across the UI.
@@ -187,10 +230,48 @@ AAHQ Foundation is clean, editorial, and deliberate. The visual language should 
 }
 ```
 
-## Do's and Don'ts
-- Do create layouts that feel intentional, spacious, and typographically led.
-- Do keep motion minimal and meaningful.
-- Do reuse these tokens consistently across app UI, docs, and landing pages.
-- Do not default to purple gradients, neon shadows, or generic startup visuals.
-- Do not overload a screen with multiple accent colors.
-- Do not trade clarity for novelty.
+## Accessibility Requirements and Testable Acceptance Criteria
+- Must meet WCAG 2.2 AA contrast and interaction requirements.
+- Must support keyboard-only use for all interactive controls.
+- Must provide visible focus indicators on every focusable element.
+- Must use semantic HTML before ARIA enhancements.
+- Must support reduced motion preferences for non-essential animation.
+- Must keep touch targets at 44px by 44px minimum where interaction is expected.
+
+Acceptance criteria for implementation review:
+- All controls are reachable in logical tab order and operable with Enter/Space when applicable.
+- Focus ring is visible at 200% zoom and not hidden by overflow clipping.
+- Error states include text and are announced where required for assistive technology.
+- Motion-heavy transitions are disabled or simplified under reduced motion.
+
+## Content and Tone Standards
+- Voice should be clear and friendly.
+- Labels must be specific and action-oriented.
+- Helper and error copy should explain what happened and what to do next.
+
+Examples:
+- Prefer: "Continue to checkout"
+- Avoid: "Submit"
+- Prefer: "Email is required"
+- Avoid: "Invalid"
+
+## Anti-Patterns and Prohibited Implementations
+- Do not use low-contrast text as a stylistic choice.
+- Do not use decorative motion that does not communicate state or feedback.
+- Do not introduce inconsistent spacing rhythm between adjacent sections.
+- Do not rely on placeholder-only labels in forms.
+- Do not introduce one-off local color choices outside semantic tokens.
+
+## Migration Notes for Existing UI
+- When existing views use raw Tailwind colors, migrate first to semantic daisyUI tokens (`primary`, `base-*`, `error`, etc.).
+- When existing components lack explicit states, add focus-visible and error behavior before visual restyling.
+- When old layouts are dense, migrate by increasing spacing rhythm first, then simplifying decoration.
+
+## QA Checklist
+- Context: design intent is stated and reflected in implementation.
+- Tokens: colors, spacing, radius, and typography come from system tokens.
+- Components: default/hover/focus-visible/active/disabled/loading/error states are implemented as applicable.
+- Responsiveness: mobile layout reduces columns before reducing readability-critical spacing.
+- Accessibility: keyboard flow, focus visibility, contrast, reduced-motion behavior, and touch targets are verified.
+- Content: labels and validation copy are clear, specific, and non-ambiguous.
+- Consistency: no one-off visual patterns conflict with system rules.
