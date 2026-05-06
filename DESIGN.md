@@ -121,6 +121,67 @@ AAHQ Foundation is clean, editorial, and deliberate. The visual language should 
 - Cards should feel structured and breathable, with enough padding for mixed content.
 - Forms should prioritize legibility and stable alignment over decorative styling.
 
+## daisyUI Mapping
+- When implementing this design system with daisyUI, prefer a custom daisyUI theme instead of mixing raw Tailwind palette classes across the UI.
+- Recommended semantic mapping:
+  - `base-100`: `#FFFDF9`
+  - `base-200`: `#F7F3EE`
+  - `base-300`: `#D8D0C8`
+  - `base-content`: `#2E2A26`
+  - `primary`: `#171717`
+  - `primary-content`: `#FFFFFF`
+  - `secondary`: `#C65A3D`
+  - `secondary-content`: `#FFFDF9`
+  - `accent`: `#F3D7CD`
+  - `accent-content`: `#2E2A26`
+  - `neutral`: `#6B625C`
+  - `neutral-content`: `#FFFDF9`
+  - `success`: `#2F6B4F`
+  - `warning`: `#A66A1F`
+  - `error`: `#A64232`
+- Prefer daisyUI component primitives for common UI: `btn`, `card`, `input`, `textarea`, `select`, `badge`, `alert`, `navbar`, `menu`, `modal`, `drawer`.
+- Keep component styling mostly in daisyUI classes plus Tailwind utilities for spacing, layout, and small one-off adjustments.
+- Avoid reintroducing a separate handcrafted button or form system unless the product needs a component daisyUI does not cover.
+
+## daisyUI Theme Example
+```css
+@import "tailwindcss";
+@plugin "daisyui";
+@plugin "daisyui/theme" {
+  name: "aahq";
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+
+  --color-base-100: #FFFDF9;
+  --color-base-200: #F7F3EE;
+  --color-base-300: #D8D0C8;
+  --color-base-content: #2E2A26;
+
+  --color-primary: #171717;
+  --color-primary-content: #FFFFFF;
+  --color-secondary: #C65A3D;
+  --color-secondary-content: #FFFDF9;
+  --color-accent: #F3D7CD;
+  --color-accent-content: #2E2A26;
+  --color-neutral: #6B625C;
+  --color-neutral-content: #FFFDF9;
+
+  --color-success: #2F6B4F;
+  --color-success-content: #FFFDF9;
+  --color-warning: #A66A1F;
+  --color-warning-content: #FFFDF9;
+  --color-error: #A64232;
+  --color-error-content: #FFFDF9;
+
+  --radius-field: 0.75rem;
+  --radius-box: 1.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+```
+
 ## Do's and Don'ts
 - Do create layouts that feel intentional, spacious, and typographically led.
 - Do keep motion minimal and meaningful.

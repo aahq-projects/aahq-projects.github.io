@@ -21,6 +21,14 @@
 - Preserve existing style and public APIs unless the task requires a change.
 - Do not invent folders, scripts, env vars, or workflows that are not present in the repo or requested by the user.
 
+## Frontend UI Rules
+- For frontend work, prefer `daisyUI 5` as the default component layer when the project already uses Tailwind CSS 4 or the user explicitly asks for daisyUI.
+- Do not assume daisyUI is installed. Verify the nearest manifest and CSS entrypoint before adding `daisyui` as a dependency.
+- If daisyUI is used, follow its documented component classes and Tailwind utility classes. Avoid custom CSS unless the required result cannot be expressed with daisyUI classes plus utilities.
+- Prefer semantic theme tokens such as `primary`, `secondary`, `accent`, `base-100`, `base-200`, and `base-content` over raw Tailwind color scales for reusable UI.
+- Keep layouts responsive with Tailwind breakpoint prefixes. Do not ship fixed desktop-only component layouts.
+- When a product-specific frontend appears, place any tighter daisyUI rules in a closer `AGENTS.md` beside that app.
+
 ## Project Structure
 - Root context files live in the repository root: `AGENTS.md`, `DESIGN.md`, `MARKETING.md`.
 - Product-specific code should live in explicit subdirectories when introduced.
