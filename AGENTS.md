@@ -9,6 +9,11 @@
 - No verified app source tree, package manifest, build config, or CI workflow is present yet.
 - When new subprojects appear, prefer adding a closer `AGENTS.md` inside that subdirectory instead of overloading this root file.
 
+## Core Stack
+- Default frontend stack for new product surfaces in this repository: `Astro 5/6` + `Tailwind CSS 4`.
+- Default component and theming layer on top of Tailwind: `daisyUI` (core components + themes).
+- This stack is the baseline unless a closer project-level `AGENTS.md` explicitly overrides it.
+
 ## Commands
 - Install deps: infer from the nearest manifest only after verifying it exists.
 - Run dev: infer from the nearest manifest or task config only after verifying it exists.

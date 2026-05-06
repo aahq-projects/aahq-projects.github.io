@@ -82,6 +82,11 @@ components:
 ## Overview
 AAHQ Foundation is clean, editorial, and deliberate. The visual language should feel authored rather than generic: warm paper backgrounds, dark ink text, restrained use of terracotta accent, and generous spacing. Avoid the default AI tendency toward glossy gradients, dense dashboards, or interchangeable SaaS layouts.
 
+## Implementation Stack
+- Base implementation stack: `Astro 5/6` + `Tailwind CSS 4`.
+- Component and theme system: `daisyUI` (core components + theme configuration).
+- Default implementation target should use this stack unless a product-local override defines another frontend setup.
+
 ## Brand & Style
 - Use contrast and typography as the primary source of hierarchy.
 - Prefer calm, tactile surfaces over high-saturation UI chrome.
