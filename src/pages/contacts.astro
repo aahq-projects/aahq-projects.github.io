@@ -1,0 +1,52 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Контакты — Астра"
+  description="Свяжитесь с агентством Астра: отправьте бриф и обсудите задачу за 30 минут."
+  canonical="https://aahq-projects.github.io/contacts"
+>
+  <main class="section-pad">
+    <div class="container-aahq grid gap-8 lg:grid-cols-[1fr_0.9fr]">
+      <section>
+        <a class="focus-ring link link-hover" href="/">На главную</a>
+        <h1 class="mt-4 text-4xl md:text-6xl">Контакты</h1>
+        <p class="mt-4 max-w-xl text-lg text-base-content/85">
+          Первый шаг: бриф и 30-минутный созвон. На созвоне определим узкие места, приоритеты и
+          реалистичный план внедрения.
+        </p>
+        <div class="mt-8 space-y-3 text-base-content/85">
+          <p><strong>Фокус:</strong> сайты, контент-системы, AI-автоматизация.</p>
+          <p><strong>География:</strong> RU/CIS (русский), global (английский).</p>
+          <p><strong>Базовый диапазон:</strong> 1,000-3,000 USD за первый контракт.</p>
+        </div>
+      </section>
+
+      <section class="card border border-base-300 bg-base-100 shadow-sm">
+        <div class="card-body">
+          <h2 class="card-title text-2xl">Отправить бриф</h2>
+          <form class="space-y-4" aria-label="Форма брифа">
+            <label class="form-control w-full">
+              <span class="label"><span class="label-text">Имя</span></span>
+              <input class="focus-ring input input-bordered w-full" type="text" name="name" placeholder="Как к вам обращаться" required />
+            </label>
+
+            <label class="form-control w-full">
+              <span class="label"><span class="label-text">Email</span></span>
+              <input class="focus-ring input input-bordered w-full" type="email" name="email" placeholder="you@company.com" required />
+            </label>
+
+            <label class="form-control w-full">
+              <span class="label"><span class="label-text">Кратко о задаче</span></span>
+              <textarea class="focus-ring textarea textarea-bordered min-h-32 w-full" name="brief" placeholder="Цель, ограничения, сроки, текущие блокеры" required></textarea>
+            </label>
+
+            <button class="focus-ring btn btn-primary min-h-11 w-full" type="submit">Продолжить к обсуждению</button>
+            <p class="text-xs text-base-content/70">Форма демонстрационная. Подключение отправки можно добавить следующим шагом.</p>
+          </form>
+        </div>
+      </section>
+    </div>
+  </main>
+</Layout>

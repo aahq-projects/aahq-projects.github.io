@@ -1,14 +1,189 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
-	<div class="p-6">
-		<button class="btn btn-primary">DaisyUI работает</button>
-	</div>
+<Layout
+	title="Астра — внедряем сайты, контент и AI-системы без хаоса"
+	description="Технологическое агентство Астра: сайты и лендинги, контент-системы и SEO, AI-автоматизация продаж и маркетинга."
+	canonical="https://aahq-projects.github.io/"
+>
+	<header class="sticky top-0 z-20 border-b border-base-300/80 glass-panel">
+		<div class="container-aahq navbar min-h-16 px-0">
+			<a class="focus-ring btn btn-ghost px-0 text-xl normal-case" href="/">Астра</a>
+			<nav class="ml-auto hidden gap-2 md:flex" aria-label="Главная навигация">
+				<a class="focus-ring btn btn-ghost" href="/services">Услуги</a>
+				<a class="focus-ring btn btn-ghost" href="/cases">Кейсы</a>
+				<a class="focus-ring btn btn-ghost" href="/about">О нас</a>
+				<a class="focus-ring btn btn-outline" href="/contacts">Контакты</a>
+			</nav>
+		</div>
+	</header>
+
+	<main>
+		<section class="section-pad pb-14">
+			<div class="container-aahq grid items-end gap-10 lg:grid-cols-[1.15fr_0.85fr]">
+				<div class="space-y-6">
+					<p class="badge badge-secondary badge-outline px-4 py-3">Технологическое агентство внедрения систем</p>
+					<h1 class="max-w-3xl text-4xl leading-tight md:text-6xl">
+						Астра превращает AI-инициативы в рабочие системы для роста.
+					</h1>
+					<p class="max-w-2xl text-lg leading-relaxed text-base-content/85">
+						Проектируем и внедряем сайты, контент-системы и AI-автоматизацию, чтобы команда
+						запускалась быстрее и работала без хаоса.
+					</p>
+					<p class="text-base text-neutral">Фокус на коде, логике и процессах. Без нереалистичных обещаний.</p>
+					<div class="flex flex-wrap gap-3">
+						<a class="focus-ring btn btn-primary min-h-11 px-6" href="/contacts">Отправить бриф</a>
+						<a class="focus-ring btn btn-secondary min-h-11 px-6" href="/contacts">
+							Обсудить задачу за 30 минут
+						</a>
+					</div>
+				</div>
+
+				<aside class="card border border-base-300 bg-base-100 shadow-sm">
+					<div class="card-body">
+						<p class="text-sm uppercase tracking-wide text-neutral">Для кого это работает</p>
+						<ul class="space-y-3 text-base leading-relaxed">
+							<li>Фаундеры B2B SaaS</li>
+							<li>Маркетинг-лиды в SMB</li>
+							<li>Продакт-лиды digital-команд</li>
+							<li>Сервисные компании и агентства</li>
+							<li>E-commerce команды</li>
+						</ul>
+						<div class="rounded-box bg-base-200 p-4 text-sm leading-relaxed">
+							Стартовый диапазон первого контракта: <strong>1,000-3,000 USD</strong>
+						</div>
+					</div>
+				</aside>
+			</div>
+		</section>
+
+		<section class="section-pad border-y border-base-300/80 bg-base-200/80">
+			<div class="container-aahq">
+				<h2 class="max-w-2xl text-3xl leading-tight md:text-5xl">
+					Почему AI-инициативы часто не дают результата
+				</h2>
+				<div class="mt-8 grid gap-5 md:grid-cols-3">
+					<article class="card border border-base-300 bg-base-100">
+						<div class="card-body">
+							<h3 class="card-title text-2xl">Нет единого процесса</h3>
+							<p>Этапы распадаются между командами, а владельцы решений не определены.</p>
+						</div>
+					</article>
+					<article class="card border border-base-300 bg-base-100">
+						<div class="card-body">
+							<h3 class="card-title text-2xl">Сайт и контент живут отдельно</h3>
+							<p>Нет связи между операционными целями, контентом и измеримым результатом.</p>
+						</div>
+					</article>
+					<article class="card border border-base-300 bg-base-100">
+						<div class="card-body">
+							<h3 class="card-title text-2xl">Запуски тормозятся</h3>
+							<p>Согласования занимают недели, задачи теряются, сроки плывут.</p>
+						</div>
+					</article>
+				</div>
+				<p class="mt-8 text-lg text-base-content/85">
+					Нужна система, которую можно повторять и масштабировать без ручного хаоса.
+				</p>
+			</div>
+		</section>
+
+		<section class="section-pad">
+			<div class="container-aahq">
+				<h2 class="text-3xl md:text-5xl">Что делает Астра</h2>
+				<p class="mt-4 max-w-2xl text-lg text-base-content/85">
+					Стратегия и внедрение в одном цикле: от диагностики и архитектуры до запуска и
+					итераций по данным.
+				</p>
+				<div class="mt-8 grid gap-5 md:grid-cols-3">
+					<article class="card border border-base-300 bg-base-100 shadow-sm">
+						<div class="card-body">
+							<h3 class="card-title text-2xl">Сайты и лендинги</h3>
+							<p>Собираем страницы под конкретные бизнес-сценарии: спрос, квалификация, конверсия.</p>
+						</div>
+					</article>
+					<article class="card border border-base-300 bg-base-100 shadow-sm">
+						<div class="card-body">
+							<h3 class="card-title text-2xl">Контент-системы и SEO</h3>
+							<p>Строим повторяемую систему: темы, ритм публикаций, роли, критерии качества.</p>
+						</div>
+					</article>
+					<article class="card border border-base-300 bg-base-100 shadow-sm">
+						<div class="card-body">
+							<h3 class="card-title text-2xl">AI-автоматизация</h3>
+							<p>Автоматизируем процессы продаж и маркетинга на уровне логики, данных и операций.</p>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section class="section-pad border-y border-base-300/80 bg-base-200/70">
+			<div class="container-aahq">
+				<h2 class="text-3xl md:text-5xl">Как мы работаем</h2>
+				<ol class="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+					<li class="card border border-base-300 bg-base-100">
+						<div class="card-body">
+							<span class="badge badge-outline">Шаг 1</span>
+							<h3 class="card-title text-2xl">Диагностика</h3>
+							<p>Бриф и 30-минутный созвон, чтобы зафиксировать контекст, ограничения и цель.</p>
+						</div>
+					</li>
+					<li class="card border border-base-300 bg-base-100">
+						<div class="card-body">
+							<span class="badge badge-outline">Шаг 2</span>
+							<h3 class="card-title text-2xl">Проектирование</h3>
+							<p>Собираем систему: структуру, роли, этапы, артефакты и критерии результата.</p>
+						</div>
+					</li>
+					<li class="card border border-base-300 bg-base-100">
+						<div class="card-body">
+							<span class="badge badge-outline">Шаг 3</span>
+							<h3 class="card-title text-2xl">Реализация</h3>
+							<p>Запускаем сайт, контентный контур и автоматизации в рабочем продакшн-процессе.</p>
+						</div>
+					</li>
+					<li class="card border border-base-300 bg-base-100">
+						<div class="card-body">
+							<span class="badge badge-outline">Шаг 4</span>
+							<h3 class="card-title text-2xl">Итерации</h3>
+							<p>Обновляем систему по данным: быстрее запуск, меньше хаоса, прозрачная операционка.</p>
+						</div>
+					</li>
+				</ol>
+			</div>
+		</section>
+
+		<section class="section-pad">
+			<div class="container-aahq">
+				<div class="rounded-box border border-base-300 bg-base-100 p-8 md:p-12">
+					<h2 class="max-w-3xl text-3xl md:text-5xl">
+						Разберем ваш процесс и соберем реалистичный план внедрения.
+					</h2>
+					<p class="mt-4 max-w-2xl text-lg leading-relaxed text-base-content/85">
+						На первом шаге фиксируем, где теряется скорость, и определяем изменения, которые
+						можно внедрить уже в ближайший цикл.
+					</p>
+					<div class="mt-6 flex flex-wrap gap-3">
+						<a class="focus-ring btn btn-primary min-h-11 px-6" href="/contacts">Отправить бриф</a>
+						<a class="focus-ring btn btn-outline min-h-11 px-6" href="/contacts">
+							Обсудить задачу за 30 минут
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="border-t border-base-300 bg-base-200/60 py-10">
+		<div class="container-aahq flex flex-col gap-4 text-sm text-base-content/80 md:flex-row md:items-center md:justify-between">
+			<p>Астра · технологии, код, логика и процессы</p>
+			<div class="flex gap-4">
+				<a class="focus-ring link link-hover" href="/services">Услуги</a>
+				<a class="focus-ring link link-hover" href="/cases">Кейсы</a>
+				<a class="focus-ring link link-hover" href="/contacts">Контакты</a>
+			</div>
+		</div>
+	</footer>
 </Layout>

@@ -1,2 +1,90 @@
 @import "tailwindcss";
 @plugin "daisyui";
+@plugin "daisyui/theme" {
+	name: "aahq";
+	default: true;
+	prefersdark: false;
+	color-scheme: light;
+
+	--color-base-100: #fffdf9;
+	--color-base-200: #f7f3ee;
+	--color-base-300: #d8d0c8;
+	--color-base-content: #2e2a26;
+
+	--color-primary: #171717;
+	--color-primary-content: #ffffff;
+	--color-secondary: #c65a3d;
+	--color-secondary-content: #fffdf9;
+	--color-accent: #f3d7cd;
+	--color-accent-content: #2e2a26;
+	--color-neutral: #6b625c;
+	--color-neutral-content: #fffdf9;
+
+	--color-success: #2f6b4f;
+	--color-success-content: #fffdf9;
+	--color-warning: #a66a1f;
+	--color-warning-content: #fffdf9;
+	--color-error: #a64232;
+	--color-error-content: #fffdf9;
+
+	--radius-field: 0.75rem;
+	--radius-box: 1.25rem;
+	--border: 1px;
+	--depth: 0;
+	--noise: 0;
+}
+
+:root {
+	--font-heading: "Fraunces", "Times New Roman", serif;
+	--font-body: "Instrument Sans", "Segoe UI", sans-serif;
+}
+
+html {
+	font-family: var(--font-body);
+	scroll-behavior: smooth;
+}
+
+body {
+	background:
+		radial-gradient(circle at 15% 0%, rgba(198, 90, 61, 0.12), transparent 35%),
+		radial-gradient(circle at 85% 100%, rgba(47, 107, 79, 0.08), transparent 30%),
+		var(--color-base-100);
+	color: var(--color-base-content);
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: var(--font-heading);
+	letter-spacing: -0.02em;
+}
+
+.container-aahq {
+	width: min(1120px, 92vw);
+	margin-inline: auto;
+}
+
+.section-pad {
+	padding-block: clamp(3.5rem, 8vw, 6rem);
+}
+
+.focus-ring {
+	@apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-base-100;
+}
+
+.glass-panel {
+	background-color: color-mix(in srgb, var(--color-base-100) 88%, white 12%);
+	backdrop-filter: blur(6px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
