@@ -1,60 +1,87 @@
 # MARKETING.md
 
-## Purpose
-This file defines the baseline marketing context for AI agents working in this repository. It is the single source of truth for messaging, voice, channel behavior, and autonomy limits until a product-specific override is added.
+## Назначение
+Этот файл фиксирует маркетинговую основу агентства Астра для всех AI-агентов и участников команды.
+Это единый источник правды по позиционированию, целевой аудитории, тону, границам оффера и правилам коммуникации.
 
-## Current Context
-- The repository does not yet expose a concrete product, ICP dataset, or channel metrics.
-- Treat this file as a default operating framework for early-stage positioning and content generation.
-- When a specific product or business unit appears, prefer a closer `MARKETING.md` inside that product directory.
+## Текущий контекст
+- Репозиторий на стадии сборки базовой системы агентства.
+- Главная задача маркетинга: четко объяснить, кому и за счет чего агентство дает результат.
+- Рабочий язык этого файла: русский.
 
-## Brand Voice
-- Clear, direct, and composed.
-- Expert without jargon inflation.
-- Specific over grandiose.
-- Avoid hype language, empty futurism, and vague transformation claims.
+## Позиционирование агентства Астра
+- Категория: технологическое агентство внедрения и сборки систем.
+- Основной фокус услуг:
+  - разработка сайтов и лендингов;
+  - контент-системы и SEO;
+  - AI-автоматизация процессов в продажах и маркетинге.
+- Ключевая ценность: превращать хаотичные инициативы в рабочие, прозрачные и воспроизводимые процессы.
+- Обещаемый эффект для клиента:
+  - быстрее запускаться;
+  - снижать хаос в согласованиях и передаче задач;
+  - получать понятную систему контента и процессов.
 
-## ICP
-- Primary audience: operators, founders, product owners, and technical leads evaluating AI-enabled workflows.
-- Company profile: small to mid-size teams that need clarity, leverage, and speed more than enterprise theater.
-- Typical pains: fragmented tools, vague AI positioning, inconsistent execution, slow handoff from strategy to implementation.
+## ICP (приоритетные сегменты)
+- Фаундеры B2B SaaS.
+- Маркетинг-лиды в SMB-компаниях.
+- Продакт-лиды в digital-командах.
+- Сервисные компании и агентства.
+- E-commerce команды.
 
-## Tone of Voice
-- Confident, not loud.
-- Practical over inspirational.
-- Opinionated when the claim is grounded.
-- Calm, concrete, and useful in explanations.
+## География и язык коммуникации
+- Основной рынок: RU и CIS, коммуникация на русском.
+- Параллельный контур: global, коммуникация на английском.
 
-## Messaging Pillars
-- AI is most valuable when it is operationalized, not merely demoed.
-- Shared context files reduce drift across code, design, and marketing work.
-- Good systems outperform one-off prompts.
-- Clarity is a competitive advantage.
+## Ценовой ориентир
+- Базовый диапазон первого контракта: 1,000-3,000 USD.
 
-## Channels
-- Primary: documentation, landing pages, product pages, case-study style writeups, email.
-- Secondary: LinkedIn, X, partner content, presentations.
-- Use each channel to clarify one idea well; do not mirror the same copy everywhere without adaptation.
+## Дифференциация
+- Опора на лучшие мировые практики, а не на локальные шаблоны.
+- Использование best-of-class инструментов под задачу, а не ради тренда.
+- Agile-подход в планировании и доставке результата.
+- Системность: фокус на коде, логике и процессах.
 
-## Content Rules
-- Lead with the operational problem before describing the solution.
-- Prefer concrete examples, workflows, and constraints over slogans.
-- Claims should be supportable by product behavior, documentation, or explicit approval.
-- Avoid writing as if the product is larger, more mature, or more widely adopted than verified.
+## Границы оффера
+- Не обещать нереалистичные результаты и гарантии.
+- Не брать на себя рекламу и классический маркетинг как услугу.
+- Работать только в зоне технологий, кода, логики и процессов.
 
-## Campaign Rules
-- No discounts, guarantees, or hard performance claims without explicit approval.
-- Any comparative claim must be evidence-backed and phrased carefully.
-- Every campaign concept should include one primary message, one proof point, and one clear CTA.
-- A/B testing is recommended for headlines and hooks when a live campaign exists.
+## Сообщения и тон
+- Тон: спокойный, уверенный, конкретный.
+- Формула коммуникации: проблема -> система -> реализация -> измеримый эффект.
+- Запрещено:
+  - размытые формулировки без операционной сути;
+  - завышенные заявления о масштабе или зрелости;
+  - обещания результатов без подтверждаемого механизма.
 
-## Autonomy Tiers
-- Full autonomy: draft landing page copy, messaging options, outlines, email drafts, CTA variants, content repurposing.
-- Ask first: paid ads, public launch copy, customer-facing claims, competitor comparisons, major repositioning.
-- Human only: legal statements, partnership announcements, pricing changes, crisis communication.
+## Каналы
+- Основные: сайт, лендинги, документация, кейсы, email.
+- Дополнительные: LinkedIn, X, партнерские материалы, презентации.
+- Принцип: один канал = одна четкая задача и адаптированная под канал подача.
 
-## Output Preferences
-- Prefer strong headlines with concrete nouns and verbs.
-- Keep paragraphs tight and scannable.
-- Use bullets when comparing options, frameworks, or campaign angles.
-- End with a clear next action instead of a vague brand flourish.
+## Базовый CTA
+- Предпочтительный первый шаг: бриф + созвон 30 минут.
+- Рабочие варианты CTA:
+  - Отправить бриф;
+  - Обсудить задачу за 30 минут;
+  - Разобрать ваш процесс и точки ускорения.
+
+## Каркас главной страницы
+- Вынесено в RFC: [docs/rfc/002-homepage-architecture-and-copy.md](docs/rfc/002-homepage-architecture-and-copy.md).
+
+## Правила для контента
+- Всегда начинать с конкретной операционной проблемы клиента.
+- Показывать механизм решения через систему и процесс, а не через лозунги.
+- Использовать конкретику: ограничения, шаги, артефакты, сроки, ответственность.
+- Каждая единица контента должна вести к следующему действию.
+
+## Автономность AI-агентов
+- Можно без согласования:
+  - черновики страниц сайта;
+  - варианты сообщений и офферов;
+  - структура лендингов и контент-систем.
+- Нужна валидация человеком:
+  - публичные конкурентные сравнения;
+  - любые внешние claims о метриках;
+  - репозиционирование агентства;
+  - юридические и партнерские формулировки.
